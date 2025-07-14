@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+    base: '/',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -14,6 +15,9 @@ export default defineConfig({
       '@features': path.resolve(__dirname, 'src/features'),
       '@shared': path.resolve(__dirname, 'src/shared'),
     },
+  },
+  build: {
+    outDir: 'dist',
   },
   test: {
     environment: 'jsdom',
